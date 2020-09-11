@@ -31,17 +31,21 @@ export default function RegistrationScreen({ navigation }: any) {
             email,
             fullName,
           };
+
           const usersRef = firebase.firestore().collection("users");
           usersRef
             .doc(uid)
             .set(data)
             .then(() => {
-              //TODO: Change this magic string of Home
-              navigation.navigate("Home", { user: data });
+              alert("Should go to home now");
+              //TODO: Can't get here for some unknown reason
+              //navigation.navigate("Home", { user: data });
             })
             .catch((error) => {
               alert(error);
             });
+          //TODO: Change this magic string of Home
+          navigation.navigate("Home", { user: data });
         }
       })
       .catch((error) => {
