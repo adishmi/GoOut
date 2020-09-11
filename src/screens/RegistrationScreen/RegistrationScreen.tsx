@@ -39,13 +39,13 @@ export default function RegistrationScreen({ navigation }: any) {
             .then(() => {
               alert("Should go to home now");
               //TODO: Can't get here for some unknown reason
-              //navigation.navigate("Home", { user: data });
+              navigation.navigate("Home", { user: data });
             })
             .catch((error) => {
               alert(error);
             });
           //TODO: Change this magic string of Home
-          navigation.navigate("Home", { user: data });
+          //navigation.navigate("Home", { user: data });
         }
       })
       .catch((error) => {
